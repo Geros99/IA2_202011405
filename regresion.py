@@ -7,13 +7,13 @@ import matplotlib.pyplot as plt
 url = "https://raw.githubusercontent.com/Geros99/IA2_202011405/refs/heads/main/datos.csv"
 
 # Leer el archivo CSV desde la URL
-df = pd.read_csv(url, encoding='ISO-8859-1', delimiter=';')
+df = pd.read_csv(url, encoding='ISO-8859-1')
 
 
 
 # Supongamos que el CSV tiene columnas 'Año' y 'Total'
-X = df[['Año']]  # Variable independiente (año)
-y = df['Valor']  # Variable dependiente (total de migrantes)
+X = df[['anio']]  # Variable independiente (año)
+y = df['valores']  # Variable dependiente (total de migrantes)
 
 # Crear y entrenar el modelo de regresión lineal
 model = LinearRegression()
