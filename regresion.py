@@ -4,14 +4,16 @@ from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 
 # URL del archivo CSV en GitHub
-url = "https://raw.githubusercontent.com/Geros99/IA2_202011405/refs/heads/main/datos.csv?token=GHSAT0AAAAAAC6NFP5QT4Z2PXYXALHZXXP6Z5TQJPA"
+url = "https://raw.githubusercontent.com/Geros99/IA2_202011405/refs/heads/main/datos.csv"
 
 # Leer el archivo CSV desde la URL
-df = pd.read_csv(url, encoding='ISO-8859-1')
+df = pd.read_csv(url, encoding='ISO-8859-1', delimiter=';')
+
+
 
 # Supongamos que el CSV tiene columnas 'Año' y 'Total'
 X = df[['Año']]  # Variable independiente (año)
-y = df['Total']  # Variable dependiente (total de migrantes)
+y = df['Valor']  # Variable dependiente (total de migrantes)
 
 # Crear y entrenar el modelo de regresión lineal
 model = LinearRegression()
